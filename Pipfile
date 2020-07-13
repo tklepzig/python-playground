@@ -13,7 +13,7 @@ jupyterlab = "*"
 plotly = "==4.8.2"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
 
 [scripts]
 install_jupyterlab = "jupyter labextension install jupyterlab-plotly"
