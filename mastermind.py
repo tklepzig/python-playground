@@ -36,9 +36,7 @@ while result != ["full"] * code_length:
     guess_count += 1
     full_matches = map(check(guess), enumerate(code))
     result = filter(lambda x: x == "half" or x == "full", list(full_matches))
-    result = list(result)
-
-    output = sorted(result)
+    result = sorted(list(result))
     output = map(lambda x: "\u25cf" if x == "full" else "\u25cb", result)
 
     output = " ".join(list(output))
