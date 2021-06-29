@@ -27,7 +27,6 @@ else:
     code = list(map(str, random.sample(range(10), 4)))
 
 while result != ["full"] * code_length:
-    print("Attempt %i" % guess_count)
     guess = list(input())
     if len(guess) != code_length:
         print("Please enter %i numbers" % code_length)
@@ -40,4 +39,6 @@ while result != ["full"] * code_length:
     output = map(lambda x: "\u25cf" if x == "full" else "\u25cb", result)
 
     output = " ".join(list(output))
-    print(output)
+
+    # from https://stackoverflow.com/a/36210179
+    print('\033[-1C\033[1A%s  %s' % ("".join(guess), output))
